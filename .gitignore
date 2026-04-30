@@ -1,0 +1,9 @@
+# Environment variables
+.env
+# Claude
+.claude/
+CLAUDE.md
+# Local dev artifacts
+go1.26.2.linux-amd64.tar.gz
+# Session devlog (personal notes, not part of the codebase)
+devlog/
