@@ -1,0 +1,2 @@
+ALTER TABLE accounts ALTER COLUMN created_at DROP DEFAULT;
+ALTER TABLE transactions ALTER COLUMN created_at DROP DEFAULT;
