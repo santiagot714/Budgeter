@@ -33,7 +33,7 @@ func (r *PostgresTransactionRepository) Delete(ctx context.Context, id uuid.UUID
     return err
 }
 func (r *PostgresTransactionRepository) Find(ctx context.Context, ids []uuid.UUID) ([]domain.Transaction, error) {
-    rows, err := r.pool.Query(ctx, "SELECT id, amount, kind, method, account_id, category_id, occurred_at, created_at, deleted_at FROM transactions WHERE id = ANY($1)", ids)
+    rows, err := r.pool.Query(ctx, "SELECT id, amount, kind, method, account_id, category_id, occurred_at, created_at, deleted_at FROM transactions WHERE id = ANY($1) AND deleted_at IS NULL", ids)
     if err != nil {
         return nil, err
     }
